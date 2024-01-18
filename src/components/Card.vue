@@ -85,13 +85,17 @@
   </div>
 
   <div class="addCartBar">
-    <span class="priceText">總金額：{{ totalAmount }}元</span>
-    <div class="counter">
-      <button @click="() => updateQuantity(-1)">–</button>
-      <input type="number" v-model="quantity">
-      <button @click="() => updateQuantity(1)">＋</button>
+    <div class="col">
+      <span class="priceText">總金額：{{ totalAmount }}元</span>
+      <div class="counter">
+        <button @click="() => updateQuantity(-1)">–</button>
+        <input type="number" v-model="quantity">
+        <button @click="() => updateQuantity(1)">＋</button>
+      </div>
     </div>
-    <div class="cartBtn">加入購物車</div>
+    <div class="col">
+      <div class="cartBtn">加入購物車</div>
+    </div>
   </div>
 
 </template>
@@ -357,10 +361,15 @@ export default {
   align-content: space-between;
 }
 
+.col {
+  width: 50%;
+}
+
 .cartBtn {
   width: 180px;
   height: 64px;
   line-height: 64px;
+  margin-left: auto;
   cursor: pointer;
   background-color: #ff6482;
   color: #fff;
