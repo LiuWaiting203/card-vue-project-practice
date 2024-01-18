@@ -10,7 +10,7 @@
         <img src="https://picsum.photos/300/200/?random=1">
       </div>
         <div class="descBox">
-          <div class="content-box" :style="{ color: textColor, backgroundColor: descBoxColor }">
+          <div class="content-box" :style="{ color: textColor, backgroundColor: descBoxColor, borderRadius: borderRadius }">
             {{ descripitionImage }}
           </div>
         </div>
@@ -21,11 +21,11 @@
     </div>
 
     <div id="section2" class="descBox">
-      <div class="warningBox" :style="{ color: textColor, backgroundColor: warningBoxColor }">
+      <div class="warningBox" :style="{ color: textColor, backgroundColor: warningBoxColor, borderRadius: borderRadius }">
         <font-awesome-icon :icon="['fas', 'circle-info']" style="color: #fd6082;" />
         <p>警告標語</p>
       </div>
-      <div class="warningBox" :style="{ color: textColor, backgroundColor: infoBoxColor }">
+      <div class="warningBox" :style="{ color: textColor, backgroundColor: infoBoxColor, borderRadius: borderRadius }">
         <font-awesome-icon :icon="['fas', 'circle-info']" style="color: #ff7b00;" />
         <p>注意標語</p>
       </div>
@@ -119,6 +119,10 @@ export default {
       type: String,
       default: '#000'
     },
+    borderRadius: {
+      type: String,
+      default: '4px'
+    },
     descBoxColor: {
       type: String,
       default: '#ccc'
@@ -142,7 +146,7 @@ export default {
 <script setup>
   import { ref, onMounted, defineProps } from 'vue'
 
-  const props = defineProps(['price', 'title', 'descripitionImage', 'textColor', 'descBoxColor', 'warningBoxColor', 'descripitionBox', 'infoBoxColor'])
+  const props = defineProps(['price', 'title', 'descripitionImage', 'textColor', 'descBoxColor', 'warningBoxColor', 'descripitionBox', 'infoBoxColor', 'borderRadius'])
 
   const quantity = ref(1)
   const unitPrice = ref(props.price || 0)

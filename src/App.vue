@@ -4,6 +4,7 @@
   :descripitionImage="`圖片樣式描述`"
   :price="`100`"
   :textColor="`#000`"
+  :borderRadius="`4px`"
   :descBoxColor="`#eee`"
   :warningBoxColor="`#ffedf5`"
   :infoBoxColor="`#fff3d9`"
